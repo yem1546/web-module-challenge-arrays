@@ -146,9 +146,13 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(arr, flavor){
-  fIndex = arr.indexOf(flavor)
-  arr.slice(fIndex, 1)
-  return arr
+  newArr = []
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] !== flavor){
+      newArr.push(arr[i])
+    }
+  }
+  return newArr
 }
 
 
@@ -175,7 +179,7 @@ Use the filterByWord function below to do the following:
 function filterByWord(arr, word){
   newArray = []
   for (let i = 0; i < arr.length; i++){
-    if (arr.includes(word)){
+    if (arr[i].includes(word)){
       newArray.unshift(arr[i])
     }
   }
